@@ -97,4 +97,47 @@ public class CatBoxPage extends BasePage {
         
         return catIds;
     }
+
+    public List<WebElement> getCatCardsByName(String name) {
+        return driver.findElements(By.cssSelector("[data-cat-name*='" + name + "']"));
+    }
+
+    public List<String> getDisplayedCatNames() {
+        List<WebElement> catCards = driver.findElements(By.cssSelector("[data-cat-name]"));
+        List<String> catNames = new java.util.ArrayList<>();
+
+        for (WebElement card : catCards) {
+            String catName = card.getDomAttribute("data-cat-name");
+            if (catName != null) {
+                catNames.add(catName);
+            }
+        }
+
+        return catNames;
+    }
+
+    public boolean areAllDisplayedCatsMatchingSearch(String searchTerm) {
+        List<String> displayedNames = getDisplayedCatNames();
+        if (displayedNames.isEmpty()) {
+            return false;
+        }
+
+        for (String name : displayedNames) {
+            if (!name.toLowerCase().contains(searchTerm.toLowerCase())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int getDisplayedCatCount() {
+        return driver.findElements(By.cssSelector("[data-cat-name]")).size();
+    }
+
+    public void waitForSearchResults() {
+        wait.until(driver -> {
+            List<WebElement> catCards = driver.findElements(By.cssSelector("[data-cat-name]"));
+            return !catCards.isEmpty();
+        });
+    }
 }

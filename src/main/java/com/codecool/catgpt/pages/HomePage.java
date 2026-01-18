@@ -174,14 +174,23 @@ public class HomePage extends BasePage {
 
     public void catchAndSaveCat(String nickname) {
         clickRunningCat();
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        waitForElementVisible(CAUGHT_CAT_MODAL);
         enterCatNickname(nickname);
         saveCaughtCat();
+    }
+
+    public void waitForInventoryAnimation() {
+        wait.until(driver -> {
+            try {
+                return isInventoryOpen();
+            } catch (Exception e) {
+                return false;
+            }
+        });
+    }
+
+    public void waitForInventoryClose() {
+        wait.until(driver -> !isInventoryOpen());
     }
     
 

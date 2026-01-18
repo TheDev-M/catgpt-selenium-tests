@@ -103,11 +103,7 @@ public class CatDetailsPage extends BasePage {
 
     public void renameCat(String newName) {
         clickRename();
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        waitForElementVisible(RENAME_FORM);
         enterNewCatName(newName);
         submitRename();
     }
@@ -155,11 +151,7 @@ public class CatDetailsPage extends BasePage {
 
     public void releaseCat() {
         clickRelease();
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        waitForElementVisible(RELEASE_MODAL);
         confirmRelease();
     }
     
