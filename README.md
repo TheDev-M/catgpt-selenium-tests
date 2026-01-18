@@ -9,6 +9,10 @@ This project contains automated Selenium tests for the CatGPT application using 
 - Firefox browser installed
 - CatGPT application running on `http://localhost:3000`
 
+## Related Repository
+
+- **CatGPT Application**: https://github.com/TheDev-M/catgpt
+
 ## Project Structure
 
 ```
