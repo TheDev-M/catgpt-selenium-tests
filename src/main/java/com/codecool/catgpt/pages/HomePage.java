@@ -2,13 +2,8 @@ package com.codecool.catgpt.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-/**
- * Page Object Model for the Home Page
- * Uses ID selectors from the frontend implementation
- */
+
 public class HomePage extends BasePage {
 
     private static final By LOGOUT_BUTTON = By.id("home-logout-button");

@@ -2,22 +2,15 @@ package com.codecool.catgpt.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-/**
- * Page Object Model for the Cat Details Page
- * Uses ID selectors from the frontend implementation
- */
 public class CatDetailsPage extends BasePage {
 
-    // Action button locators
     private static final By SELECT_BUTTON = By.id("cat-select-button");
     private static final By RENAME_BUTTON = By.id("cat-rename-button");
     private static final By RELEASE_BUTTON = By.id("cat-release-button");
     private static final By BACK_BUTTON = By.id("cat-back-button");
 
-    // Rename form locators
+
     private static final By RENAME_FORM = By.id("cat-rename-form");
     private static final By RENAME_INPUT = By.id("cat-rename-input");
     private static final By RENAME_HINT = By.id("cat-rename-hint");
@@ -25,7 +18,7 @@ public class CatDetailsPage extends BasePage {
     private static final By RENAME_SUBMIT = By.id("cat-rename-submit");
     private static final By RENAME_CANCEL = By.id("cat-rename-cancel");
 
-    // Release modal locators
+
     private static final By RELEASE_MODAL = By.id("cat-release-modal");
     private static final By RELEASE_MODAL_TITLE = By.id("cat-release-modal-title");
     private static final By RELEASE_MODAL_MESSAGE = By.id("cat-release-modal-message");

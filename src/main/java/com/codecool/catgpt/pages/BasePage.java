@@ -12,8 +12,8 @@ import java.time.Duration;
 import static com.codecool.catgpt.config.TestConfig.EXPLICIT_WAIT;
 
 public abstract class BasePage {
-    protected WebDriver driver;
-    protected WebDriverWait wait;
+    protected final WebDriver driver;
+    protected final WebDriverWait wait;
     
     public BasePage(WebDriver driver) {
         this.driver = driver;
